@@ -109,3 +109,9 @@ newcol= "check"
 df[newcol]=np.where(df['weight']/((df['high']/100)**2)>df['BMI'],1,0)
 
 ```
+### 資料前處理
+
+### 特徵篩選
+* 迴歸係數
+* 決策樹 吉尼係數
+* mRMR
