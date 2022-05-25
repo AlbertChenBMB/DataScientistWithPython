@@ -10,21 +10,21 @@ from tokenize import Ignore
 import sys
 
 
-def Prob_fu(x1,x2,co=0.0,Ptype="AND"):
+def Prob_fu(x1,x2,Ptype="AND"):
+    AND_P= (float(x1)*float(x2))
     if Ptype == "AND":
-        return (float(x1)*float(x2))
+        return AND_P
     elif Ptype=="OR":
-        return float(x1+x2)-float(co)
+        return float(x1+x2)-float(AND_P)
     else:
         return "wrong prob_type!"
 
 
 x1=input("fist probability:")
 x2=input("second probability:")
-co=input("join probability:")
 Ptype=input("ptype:")
 
-print(Prob_fu(x1,x2,co,Ptype)) 
+print(Prob_fu(x1,x2,Ptype)) 
 
 ## PMF : 機率質量函數
 def PMF():
@@ -40,3 +40,9 @@ def CDF_pract(x,y):
 ## PDF的積分會是CDF
 ## 當CDF取積分則是一個面積(機率)
 # 所以寫一個 integrate(PDF, 範圍)可以得到一個面積 = 機率
+
+
+### Conditional probability
+def conditional_prob(A,B):
+    return (A*B)/B
+
